@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Конвертер матриц</title>
+</head>
+<body>
+    <h1>Введите матрицу инциденций</h1>
+    <form method="post">
+        {% csrf_token %}
+        <textarea name="matrix" rows="10" cols="50"></textarea><br><br>
+        <input type="submit" value="Конвертировать">
+    </form>
+
+    {% if adjacency_matrix %}
+    <h2>Матрица смежности:</h2>
+    <pre>{{ adjacency_matrix }}</pre>
+
+    <h2>Левые инциденции:</h2>
+    <pre>{{ left_incidents }}</pre>
+    {% endif %}
+</body>
+</html>

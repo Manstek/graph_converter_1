@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Результат преобразования</title>
+</head>
+<body>
+    <h1>Матрица смежности</h1>
+    <table border="1">
+        {% for row in adjacency_matrix %}
+            <tr>
+                {% for cell in row %}
+                    <td>{{ cell }}</td>
+                {% endfor %}
+            </tr>
+        {% endfor %}
+    </table>
+
+    <h2>Множество левых инциденций</h2>
+    <ul>
+        {% if left_incidents %}
+            {% for vertex in left_incidents %}
+                <li>Левая вершина: {{ vertex }}</li>
+            {% endfor %}
+        {% else %}
+            <li>Левые инцидентные вершины отсутствуют</li>
+        {% endif %}
+    </ul>
+
+    <a href="{% url 'convert_matrix_lr_1' %}">Преобразовать другую матрицу</a>
+</body>
+</html>

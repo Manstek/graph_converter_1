@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Инциденций в смежностей</title>
+</head>
+<body>
+    <h1>Преобразование матрицы инциденций в матрицу смежностей</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Преобразовать</button>
+    </form>
+</body>
+</html>
